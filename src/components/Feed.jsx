@@ -14,6 +14,7 @@ const Feed = () => {
       .then((data) => setVideos(data.items));
   }, [selectedCategory]);
 
+  console.log(videos)
 
   return (
     // Our feed will render in a column view, but when on
@@ -55,7 +56,7 @@ const Feed = () => {
         >
           {selectedCategory} <span style={{ color : '#F31503' }}>videos</span>
         </Typography>
-        <Videos videos={[videos]} />
+        <Videos videos={videos} />
       </Box>
     </Stack>
   )
