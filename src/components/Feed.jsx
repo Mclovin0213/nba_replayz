@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Box, Stack, Typography } from '@mui/material'
 
 import { fetchFromAPI } from "../utils/fetchFromAPI";
-import { Sidebar, Videos } from "./";
+import { FeedCategories, Videos } from "./";
 
 const Feed = () => {
 
@@ -19,29 +19,22 @@ const Feed = () => {
   return (
     // Our feed will render in a column view, but when on
     // medium devices (md) will be in row view
-    <Stack sx={{ flexDirection: { sx: "column", md: "row" }}}>
+    <Stack sx={{ flexDirection: "column"}}>
       <Box sx={{ 
-        height: { sx: 'auto', md: '92vh '},
+        width: '100%',
+        height: { sx: 'auto', md: '10vh '},
         borderRight: '1px solid #3d3d3d',
-        px: { sx: 0, md: 2 }
       }}>
-        <Sidebar
+        <FeedCategories
           selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}
         />
-        <Typography 
-          className="copyright"
-          variant="body2"
-          sx ={{ mt: 1.5, color: '#fff '}}
-        >
-          Julian Avellaneda
-        </Typography>
       </Box>
       <Box
         p={2}
         sx={{
           overflowY: 'auto',
-          height: '90h',
+          height: '90vh',
           flex: 2
         }}
 
